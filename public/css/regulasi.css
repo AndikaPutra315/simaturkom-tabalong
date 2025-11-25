@@ -1,0 +1,30 @@
+body {
+    background-color: #f4f7fc;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #1a237e;
+    font-weight: 600;
+}
+
+.card-footer {
+    background-color: #f8f9fc;
+}
+
+.btn-outline-primary,
+.btn-primary {
+    font-weight: 500;
+}

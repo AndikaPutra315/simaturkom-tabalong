@@ -1,0 +1,191 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* CSS Variables for easy theme management */
+:root {
+    --primary-color: #4A90E2; /* A modern blue */
+    --background-color: #f4f7fc;
+    --card-background-color: #ffffff;
+    --text-color: #333;
+    --text-muted-color: #6c757d;
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    --card-hover-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
+}
+
+/* =================================
+   GENERAL & LAYOUT
+   ================================= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+main {
+    flex: 1;
+    padding: 40px 0;
+}
+
+.container-fluid, .container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* =================================
+   CARDS & CONTENT CONTAINERS
+   ================================= */
+.content-card, .card {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    border: none;
+}
+
+.card-header {
+    padding: 1.25rem 30px;
+    border-bottom: 1px solid #eee;
+    background-color: var(--card-background-color);
+}
+
+.card-header h1, .card .card-title {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.card-header p {
+    margin: 5px 0 0 0;
+    color: var(--text-muted-color);
+    font-size: 0.95rem;
+}
+
+.form-card-header .title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* --- Statistik Cards (from your new code) --- */
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+}
+.stat-card .card-body { padding: 1.5rem; }
+.stat-card .fa-3x {
+    font-size: 2.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgba(74, 144, 226, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stat-card h2 { font-weight: 700; }
+.stat-card .text-muted { font-size: 0.9rem; color: var(--text-muted-color); }
+
+/* Icon Colors for Stat Cards */
+.stat-card .text-primary { color: var(--primary-color) !important; }
+.stat-card .text-success { color: #50C878 !important; }
+.stat-card .text-warning { color: #FABE4D !important; }
+.stat-card .text-danger  { color: #F86A6A !important; }
+.stat-card .text-success .fa-3x { background-color: rgba(80, 200, 120, 0.1); }
+.stat-card .text-warning .fa-3x { background-color: rgba(250, 190, 77, 0.1); }
+.stat-card .text-danger .fa-3x { background-color: rgba(248, 106, 106, 0.1); }
+
+
+/* =================================
+   TOOLBAR, FILTERS & BUTTONS
+   ================================= */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    gap: 15px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-group select {
+    padding: 10px 15px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* --- General Button Styles --- */
+.btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #357ABD;
+    border-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+/* Legacy Button Styles (still available for use) */
+.action-buttons { display: flex; gap: 10px; align-items: center; }
+.btn-custom { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; text-decoration: none; border: none; }
+.btn-custom i { margin-right: 8px; }
+.btn-refresh { background-color: #1a237e; color: white; }
+.btn-refresh:hover { background-color: #151c68; color: white; }
+.btn-pdf { background-color: #c82333; color: white; }
+.btn-pdf:hover { background-color: #a21b29; color: white; }
+.btn-add { background-color: #0d6efd; color: white; }
+.btn-add:hover { background-color: #0b5ed7; color: white; }
+
+
+/* =================================
+   TABLES
+   ================================= */
+.table-responsive { width: 100%; overflow-x: auto; }
+.data-table, .table { width: 100%; border-collapse: collapse; }
+.data-table th, .data-table td,
+.table th, .table td { padding: 15px 20px; text-align: left; font-size: 0.9rem; vertical-align: middle; }
+.data-table thead, .table thead { background-color: #f8f9fc; }
+.data-table th, .table thead th { font-weight: 600; color: #33425e; text-transform: uppercase; letter-spacing: 0.5px; }
+.data-table tbody tr { border-bottom: 1px solid #eef2f9; }
+.data-table tbody tr:hover { background-color: #f4f7fc; }
+
+/* Table Footer */
+.table-footer { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-top: 1px solid #eef2f9; }
+.entries-info { color: var(--text-muted-color); font-size: 0.9rem; }
+
+
+/* =================================
+   COMPONENTS & ANIMATIONS
+   ================================= */
+.status-badge { display: inline-block; padding: 5px 12px; border-radius: 15px; font-weight: 500; font-size: 0.8rem; text-transform: capitalize; }
+.status-aktif { background-color: #e7f5e8; color: #28a745; }
+.status-nonaktif { background-color: #f8d7da; color: #721c24; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}

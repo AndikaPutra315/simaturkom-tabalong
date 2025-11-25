@@ -1,0 +1,105 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* CSS Variables for easy theme management */
+:root {
+    --primary-color: #4A90E2; /* A modern blue */
+    --background-color: #f4f7fc;
+    --card-background-color: #ffffff;
+    --text-color: #333;
+    --text-muted-color: #6c757d;
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    --card-hover-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+/* --- Statistik Cards --- */
+.stat-card {
+    border: none;
+    border-radius: 12px; /* Softer corners */
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-background-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-card .fa-3x {
+    font-size: 2.5rem; /* Slightly smaller icons for balance */
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgba(74, 144, 226, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card .text-primary { color: var(--primary-color) !important; }
+.stat-card .text-success { color: #50C878 !important; }
+.stat-card .text-warning { color: #FABE4D !important; }
+.stat-card .text-danger  { color: #F86A6A !important; }
+
+.stat-card .text-success .fa-3x { background-color: rgba(80, 200, 120, 0.1); }
+.stat-card .text-warning .fa-3x { background-color: rgba(250, 190, 77, 0.1); }
+.stat-card .text-danger .fa-3x { background-color: rgba(248, 106, 106, 0.1); }
+
+.stat-card h2 {
+    font-weight: 700;
+}
+
+.stat-card .text-muted {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+}
+
+/* --- Main Content Cards (Chart & Quick Actions) --- */
+.card.shadow-sm {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow) !important;
+}
+
+.card .card-header {
+    background-color: var(--card-background-color);
+    border-bottom: 1px solid #eee;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.card .card-title {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* --- Quick Actions Buttons --- */
+.btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #357ABD;
+    border-color: #357ABD;
+    transform: translateY(-2px);
+}

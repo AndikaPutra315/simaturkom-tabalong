@@ -1,0 +1,300 @@
+/* =================================
+   Reset dan Pengaturan Dasar
+   ================================= */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =================================
+   Reusable Component: Section Title
+   ================================= */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a237e;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #ffab00;
+    border: none;
+    margin: 0 auto 40px auto;
+}
+
+/* =================================
+   Hero Section
+   ================================= */
+.hero-container {
+    background-image: linear-gradient(rgba(26, 35, 126, 0.7), rgba(63, 81, 181, 0.7)), url("../images/bg-home.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.hero-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 20px auto 30px auto;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.hero-button {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.btn-primary-custom {
+    background-color: #ffab00;
+    color: #1a237e;
+}
+.btn-primary-custom:hover {
+    background-color: #ffd600;
+    transform: translateY(-3px);
+}
+.btn-secondary-custom {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-secondary-custom:hover {
+    background-color: #ffffff;
+    color: #1a237e;
+    transform: translateY(-3px);
+}
+
+/* =================================
+   Content & Features Section
+   ================================= */
+.content-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+.content-section p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+.features-section {
+    padding: 60px 0;
+    background-color: #f4f7fc;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(26, 35, 126, 0.1);
+}
+.feature-icon {
+    font-size: 3rem;
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+.feature-card h3 {
+    font-size: 1.25rem;
+}
+
+/* =================================
+   Stats & Chart Section
+   ================================= */
+.stats-and-chart-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* PERBAIKAN: Style dasar untuk SEMUA kartu, baik link atau div */
+.stat-card {
+    background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(26, 35, 126, 0.2);
+    text-decoration: none; /* Menghapus garis bawah jika ini adalah link */
+}
+.stat-card .icon {
+    font-size: 3rem;
+    opacity: 0.8;
+}
+.stat-card .info {
+    flex: 1;
+}
+.stat-card .info .number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+.stat-card .info .label {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* PERBAIKAN: Style HANYA untuk kartu yang bisa diklik (link) */
+.stat-card-link {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(26, 35, 126, 0.15);
+    color: #ffffff; /* Memastikan teks tetap putih saat di-hover */
+}
+
+
+/* =================================
+   Chart Container & Tabs
+   ================================= */
+.chart-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.chart-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}
+.chart-tab-item {
+    padding: 12px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #495057;
+}
+.chart-tab-item.active {
+    color: #1a237e;
+    font-weight: 600;
+    background-color: #eef2f9;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.chart-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.chart-filters select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+}
+
+/* Tombol Download Chart */
+.btn-download-chart {
+    background-color: #c82333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.btn-download-chart:hover {
+    background-color: #a21b29;
+}
+.btn-download-chart i {
+    margin-right: 8px;
+}
+
+
+/* =================================
+   Media Queries untuk Responsivitas
+   ================================= */
+@media (max-width: 992px) {
+    .hero-title { font-size: 2.8rem; }
+    .hero-description { font-size: 1rem; }
+}
+@media (max-width: 768px) {
+    .hero-container { padding: 0 1rem; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1rem; letter-spacing: 2px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .hero-button { width: 80%; text-align: center; }
+    .section-title { font-size: 1.8rem; }
+    .stats-grid { gap: 20px; }
+    .stat-card { padding: 15px; gap: 15px; flex-direction: column; text-align: center; }
+    .stat-card .icon { margin-right: 0; }
+    .chart-tabs { flex-direction: column; align-items: stretch; gap: 10px; }
+    .chart-tab-item { text-align: center; }
+}
+@media (max-width: 576px) {
+    .hero-title { font-size: 1.8rem; }
+    .chart-container { padding: 20px; }
+}
