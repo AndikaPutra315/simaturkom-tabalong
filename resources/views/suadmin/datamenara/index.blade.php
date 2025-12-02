@@ -21,7 +21,6 @@
         .filter-group { display: flex; gap: 15px; align-items: center; }
         .filter-group select { padding: 10px 15px; border: 1px solid #dcdfe6; border-radius: 6px; font-size: 0.9rem; }
         .action-buttons { display: flex; gap: 10px; align-items: center; }
-        /* Styling baru untuk tombol agar mirip dengan halaman publik */
         .btn-custom {
             display: inline-flex;
             align-items: center;
@@ -71,7 +70,6 @@
                 </div>
             @endif
 
-            {{-- DIUBAH: Menggunakan {!! !!} agar bisa menampilkan error HTML --}}
             @if(session('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {!! session('error') !!}
@@ -189,7 +187,6 @@
         </div>
     </main>
 
-    {{-- MODAL UNTUK UPLOAD EXCEL (SUDAH DIPERBARUI) --}}
     <div class="modal fade" id="importExcelModal" tabindex="-1" aria-labelledby="importExcelModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -220,7 +217,7 @@
                             <input class="form-control" type="file" name="file_excel" id="file_excel"
                                    accept=".xlsx, .xls, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                                    required>
-                        </div>
+                          </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

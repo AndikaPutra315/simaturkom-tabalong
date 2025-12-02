@@ -26,14 +26,15 @@
                         <h5 class="mb-0">Informasi Dasar</h5>
                         <div class="col-md-6">
                             <label for="kode" class="form-label fw-bold">Kode</label>
-                            {{-- HAPUS 'required' DARI INPUT INI --}}
+                            {{-- HAPUS 'required' --}}
                             <input type="text" class="form-control @error('kode') is-invalid @enderror" id="kode" name="kode" value="{{ old('kode') }}" placeholder="Opsional">
                             <div class="form-text">Boleh dikosongkan jika tidak ada.</div>
                             @error('kode')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="col-md-6">
                             <label for="provider" class="form-label fw-bold">Provider</label>
-                            <input type="text" class="form-control @error('provider') is-invalid @enderror" id="provider" name="provider" value="{{ old('provider') }}" required>
+                            {{-- HAPUS 'required' --}}
+                            <input type="text" class="form-control @error('provider') is-invalid @enderror" id="provider" name="provider" value="{{ old('provider') }}">
                             @error('provider')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
@@ -41,27 +42,32 @@
                         <h5 class="mb-0">Informasi Lokasi</h5>
                         <div class="col-md-6">
                             <label for="kelurahan" class="form-label fw-bold">Kelurahan</label>
-                            <input type="text" class="form-control @error('kelurahan') is-invalid @enderror" id="kelurahan" name="kelurahan" value="{{ old('kelurahan') }}" required>
+                            {{-- HAPUS 'required' --}}
+                            <input type="text" class="form-control @error('kelurahan') is-invalid @enderror" id="kelurahan" name="kelurahan" value="{{ old('kelurahan') }}">
                             @error('kelurahan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="col-md-6">
                             <label for="kecamatan" class="form-label fw-bold">Kecamatan</label>
-                            <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" id="kecamatan" name="kecamatan" value="{{ old('kecamatan') }}" required>
+                            {{-- HAPUS 'required' --}}
+                            <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" id="kecamatan" name="kecamatan" value="{{ old('kecamatan') }}">
                             @error('kecamatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="col-12">
                             <label for="alamat" class="form-label fw-bold">Alamat</label>
-                            <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3" required>{{ old('alamat') }}</textarea>
+                            {{-- HAPUS 'required' --}}
+                            <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ old('alamat') }}</textarea>
                             @error('alamat')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="col-md-6">
                             <label for="longitude" class="form-label fw-bold">Longitude</label>
-                            <input type="number" step="any" class="form-control @error('longitude') is-invalid @enderror" id="longitude" name="longitude" value="{{ old('longitude') }}" required>
+                            {{-- HAPUS 'required' --}}
+                            <input type="number" step="any" class="form-control @error('longitude') is-invalid @enderror" id="longitude" name="longitude" value="{{ old('longitude') }}">
                             @error('longitude')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="col-md-6">
                             <label for="latitude" class="form-label fw-bold">Latitude</label>
-                            <input type="number" step="any" class="form-control @error('latitude') is-invalid @enderror" id="latitude" name="latitude" value="{{ old('latitude') }}" required>
+                            {{-- HAPUS 'required' --}}
+                            <input type="number" step="any" class="form-control @error('latitude') is-invalid @enderror" id="latitude" name="latitude" value="{{ old('latitude') }}">
                             @error('latitude')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
@@ -69,7 +75,8 @@
                         <h5 class="mb-0">Informasi Teknis</h5>
                         <div class="col-md-6">
                             <label for="status" class="form-label fw-bold">Status</label>
-                             <select class="form-select @error('status') is-invalid @enderror" id="status" name="status" required>
+                             {{-- HAPUS 'required' --}}
+                             <select class="form-select @error('status') is-invalid @enderror" id="status" name="status">
                                 <option value="" selected disabled>Pilih Status...</option>
                                 <option value="aktif" {{ old('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
                                 <option value="nonaktif" {{ old('status') == 'nonaktif' ? 'selected' : '' }}>Nonaktif</option>
@@ -78,7 +85,8 @@
                         </div>
                         <div class="col-md-6">
                             <label for="tinggi_tower" class="form-label fw-bold">Tinggi Tower (meter)</label>
-                            <input type="number" class="form-control @error('tinggi_tower') is-invalid @enderror" id="tinggi_tower" name="tinggi_tower" value="{{ old('tinggi_tower') }}" required>
+                            {{-- HAPUS 'required' --}}
+                            <input type="number" class="form-control @error('tinggi_tower') is-invalid @enderror" id="tinggi_tower" name="tinggi_tower" value="{{ old('tinggi_tower') }}">
                             @error('tinggi_tower')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                     </div>

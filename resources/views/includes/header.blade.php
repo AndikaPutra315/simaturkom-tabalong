@@ -14,7 +14,7 @@
     .logo-group { display: flex; align-items: center; border-right: 2px solid #e0e0e0; padding-right: 20px; margin-right: 20px; }
     .logo-group img { height: 45px; width: auto; margin-right: 15px; }
     .logo-group img:last-child { margin-right: 0; }
-    
+
     .site-name {
         font-family: 'Poppins', sans-serif;
         font-size: 1.6rem;
@@ -289,7 +289,7 @@
                 <ul class="dropdown-menu-nav">
                     <li>
                         <a href="{{ Auth::check() ? route('suadmin.datamenara.index') : route('datamenara') }}"
-                           class="{{ (Request::routeIs('datamenara') || Request::routeIs('suadmin.datamenara.*')) ? 'active' : '' }}">Data Menara</a>
+                           class="{{ (Request::routeIs('datamenara') || Request::routeIs('suadmin.datamenara.*')) ? 'active' : '' }}">Data Menara BTS</a>
                     </li>
                     <li>
                         <a href="{{ Auth::check() ? route('suadmin.databakti.index') : route('databakti') }}"
