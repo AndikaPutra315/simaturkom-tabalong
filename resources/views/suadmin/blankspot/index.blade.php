@@ -59,6 +59,7 @@
         .status-diusulkan { background-color: #e2e3e5; color: #383d41; } /* Abu-abu */
         .status-tercover { background-color: #d1e7dd; color: #0f5132; } /* Hijau */
         .status-proses { background-color: #fff3cd; color: #664d03; }   /* Kuning */
+        .status-lainnya { background-color: #343a40; color: #ffffff; }
 
         .table-footer { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-top: 1px solid #eef2f9; }
         .entries-info { color: #66789a; font-size: 0.9rem; }
@@ -116,6 +117,7 @@
                         <a href="{{ route('suadmin.blankspot.create') }}" class="btn-custom btn-add">
                             <i class="fas fa-plus"></i> Tambah Data
                         </a>
+
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -130,7 +132,7 @@
                                 <th>Layanan Pendidikan</th>
                                 <th>Layanan Kesehatan</th>
                                 <th>Status</th>
-                                <th class="text-center">Aksi</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -139,35 +141,39 @@
                                     <td>{{ $bs->desa }}</td>
                                     <td>{{ $bs->kecamatan }}</td>
                                     <td>{{ $bs->site }}</td>
-                                    <td class="coord-text">{{ $bs->latitude }}</td>
-                                    <td class="coord-text">{{ $bs->longitude }}</td>
+                                    <td>{{ $bs->latitude }}</td>
+                                    <td>{{ $bs->longitude }}</td>
                                     <td>{{ $bs->layanan_pendidikan ?? '-' }}</td>
                                     <td>{{ $bs->layanan_kesehatan ?? '-' }}</td>
+
                                     <td>
-                                        {{-- PERBAIKAN LOGIKA STATUS --}}
                                         @if($bs->status == 'Diusulkan')
-                                            <span class="status-badge status-diusulkan">{{ $bs->status }}</span>
+                                            <span class="status-badge status-diusulkan">Diusulkan</span>
 
                                         @elseif($bs->status == 'Sudah Tercover' || $bs->status == 'Selesai')
-                                            {{-- Jika Selesai, pakai warna hijau (tercover) --}}
                                             <span class="status-badge status-tercover">{{ $bs->status }}</span>
 
+                                        @elseif($bs->status == 'Proses Pembangunan')
+                                            <span class="status-badge status-proses">Proses</span>
+
                                         @else
-                                            {{-- Jika lainnya (Proses, dll), pakai warna kuning dan tampilkan teks aslinya --}}
-                                            <span class="status-badge status-proses">{{ $bs->status }}</span>
+                                            <span class="status-badge status-lainnya">{{ $bs->status }}</span>
                                         @endif
                                     </td>
+
                                     <td class="text-center">
-                                        <a href="{{ route('suadmin.blankspot.edit', $bs->id) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="Edit Data" style="color:white">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <form action="{{ route('suadmin.blankspot.destroy', $bs->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Hapus Data" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        <div class="d-flex justify-content-center gap-1">
+                                            <a href="{{ route('suadmin.blankspot.edit', $bs->id) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="Edit Data" style="color:white">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <form action="{{ route('suadmin.blankspot.destroy', $bs->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Hapus Data" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @empty

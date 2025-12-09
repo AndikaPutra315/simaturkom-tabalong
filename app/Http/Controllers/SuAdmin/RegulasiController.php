@@ -33,7 +33,7 @@ class RegulasiController extends Controller
     {
         $request->validate([
             'nama_dokumen' => 'required|string|max:255',
-            'file_dokumen' => 'required|file|mimes:pdf|max:5120', // Maksimal 5MB
+            'file_dokumen' => 'required|file|mimes:pdf|max:5120',
         ]);
 
         $file = $request->file('file_dokumen');

@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Anda (Dihapus untuk keringkasan, diasumsikan sudah benar) */
         body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #f4f7fc; }
         main { flex: 1; padding: 40px 0; }
         .container-fluid { max-width: 1800px; padding: 0 30px; }
@@ -62,7 +61,6 @@
 
     <main>
         <div class="container-fluid">
-            {{-- PERBAIKAN: Alert Session ditempatkan langsung di sini --}}
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
                     {{ session('success') }}
@@ -154,7 +152,6 @@
                                         @endif
                                     </td>
                                     <td class="text-center">
-                                        {{-- PERBAIKAN VITAL: Memastikan ID dikirim ke rute edit --}}
                                         <a href="{{ route('suadmin.databakti.edit', $item->id) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="Edit Data">
                                             <i class="fas fa-edit"></i>
                                         </a>
@@ -169,7 +166,6 @@
                                     </td>
                                 </tr>
 
-                                {{-- MODAL DELETE UNTUK SETIAP ITEM --}}
                                 <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -212,7 +208,6 @@
         </div>
     </main>
 
-    {{-- Modal Import Excel --}}
     <div class="modal fade" id="importExcelModal" tabindex="-1" aria-labelledby="importExcelModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -255,7 +250,6 @@
     @include('includes.footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Inisialisasi Tooltip Bootstrap
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
           return new bootstrap.Tooltip(tooltipTriggerEl)

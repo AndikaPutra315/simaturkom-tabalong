@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    {{-- Menggunakan CSS Admin yang sama agar konsisten --}}
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f4f7fc; }
         .fade-in-up { animation: fadeInUp 0.5s ease-out forwards; opacity: 0; transform: translateY(20px); }
@@ -43,21 +42,18 @@
                     <div class="row g-4">
                         <h5 class="mb-0" style="color: #1a237e; font-weight: 600;">Informasi Lokasi</h5>
 
-                        {{-- Desa --}}
                         <div class="col-md-6">
                             <label for="desa" class="form-label fw-bold">Desa</label>
                             <input type="text" class="form-control @error('desa') is-invalid @enderror" id="desa" name="desa" value="{{ old('desa', $blankspot->desa) }}" required>
                             @error('desa')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
-                        {{-- Kecamatan --}}
                         <div class="col-md-6">
                             <label for="kecamatan" class="form-label fw-bold">Kecamatan</label>
                             <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" id="kecamatan" name="kecamatan" value="{{ old('kecamatan', $blankspot->kecamatan) }}" required>
                             @error('kecamatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
-                        {{-- Site --}}
                         <div class="col-12">
                             <label for="site" class="form-label fw-bold">Site / Nama Lokasi</label>
                             <input type="text" class="form-control @error('site') is-invalid @enderror" id="site" name="site" value="{{ old('site', $blankspot->site) }}" required>
@@ -67,14 +63,12 @@
                         <hr class="my-3">
                         <h5 class="mb-0" style="color: #1a237e; font-weight: 600;">Koordinat Peta</h5>
 
-                        {{-- Latitude --}}
                         <div class="col-md-6">
                             <label for="latitude" class="form-label fw-bold">Latitude</label>
                             <input type="text" class="form-control @error('latitude') is-invalid @enderror" id="latitude" name="latitude" value="{{ old('latitude', $blankspot->latitude) }}" required>
                             @error('latitude')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
-                        {{-- Longitude --}}
                         <div class="col-md-6">
                             <label for="longitude" class="form-label fw-bold">Longitude</label>
                             <input type="text" class="form-control @error('longitude') is-invalid @enderror" id="longitude" name="longitude" value="{{ old('longitude', $blankspot->longitude) }}" required>
@@ -84,25 +78,23 @@
                         <hr class="my-3">
                         <h5 class="mb-0" style="color: #1a237e; font-weight: 600;">Status & Layanan</h5>
 
-                        {{-- Layanan Pendidikan --}}
                         <div class="col-md-6">
                             <label for="layanan_pendidikan" class="form-label fw-bold">Layanan Pendidikan</label>
                             <input type="text" class="form-control" id="layanan_pendidikan" name="layanan_pendidikan" value="{{ old('layanan_pendidikan', $blankspot->layanan_pendidikan) }}">
                         </div>
 
-                        {{-- Layanan Kesehatan --}}
                         <div class="col-md-6">
                             <label for="layanan_kesehatan" class="form-label fw-bold">Layanan Kesehatan</label>
                             <input type="text" class="form-control" id="layanan_kesehatan" name="layanan_kesehatan" value="{{ old('layanan_kesehatan', $blankspot->layanan_kesehatan) }}">
                         </div>
 
-                        {{-- Status --}}
                         <div class="col-md-12">
                             <label for="status" class="form-label fw-bold">Status Pengajuan</label>
                             <select class="form-select @error('status') is-invalid @enderror" id="status" name="status" required>
                                 <option value="Diusulkan" {{ old('status', $blankspot->status) == 'Diusulkan' ? 'selected' : '' }}>Diusulkan</option>
                                 <option value="Selesai" {{ old('status', $blankspot->status) == 'Selesai' ? 'selected' : '' }}>Selesai</option>
                                 <option value="Dalam Pembangunan" {{ old('status', $blankspot->status) == 'Dalam Pembangunan' ? 'selected' : '' }}>Dalam Pembangunan</option>
+                                <option value="Lainnya" {{ old('status', $blankspot->status) == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
                             </select>
                             @error('status')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>

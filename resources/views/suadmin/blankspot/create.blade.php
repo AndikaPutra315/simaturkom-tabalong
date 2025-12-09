@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data Blankspot - Admin</title>
-    {{-- Bootstrap & Fonts (Sama seperti Data Menara) --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS Profesional (Diadopsi dari Data Menara) */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f7fc;
@@ -27,7 +25,6 @@
             padding: 0 30px;
         }
 
-        /* Card Styling */
         .card.fade-in-up {
             border: none;
             border-radius: 12px;
@@ -51,7 +48,6 @@
             padding: 40px;
         }
 
-        /* Form Inputs */
         .form-label {
             font-weight: 600;
             color: #33425e;
@@ -70,7 +66,6 @@
             box-shadow: 0 0 0 0.2rem rgba(26, 35, 126, 0.1);
         }
 
-        /* Divider */
         hr.my-3 {
             border-top: 1px solid #eef2f9;
             opacity: 1;
@@ -83,7 +78,6 @@
             font-size: 1.1rem;
         }
 
-        /* Buttons */
         .btn-primary {
             background-color: #1a237e;
             border-color: #1a237e;
@@ -121,7 +115,6 @@
                     @csrf
 
                     <div class="row g-4">
-                        {{-- BAGIAN 1: LOKASI --}}
                         <h5 class="mb-0">Informasi Lokasi</h5>
 
                         <div class="col-md-6">
@@ -142,7 +135,6 @@
                             @error('site')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
-                        {{-- BAGIAN 2: KOORDINAT --}}
                         <hr class="my-3">
                         <h5 class="mb-0">Koordinat Peta</h5>
 
@@ -157,7 +149,6 @@
                             @error('longitude')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
 
-                        {{-- BAGIAN 3: INFORMASI LAYANAN --}}
                         <hr class="my-3">
                         <h5 class="mb-0">Status & Layanan</h5>
 
@@ -178,6 +169,7 @@
                                 <option value="Diusulkan" {{ old('status') == 'Diusulkan' ? 'selected' : '' }}>Diusulkan</option>
                                 <option value="Selesai" {{ old('status') == 'Selesai' ? 'selected' : '' }}>Selesai</option>
                                 <option value="Dalam Pembangunan" {{ old('status') == 'Dalam Pembangunan' ? 'selected' : '' }}>Dalam Pembangunan</option>
+                                <option value="Lainnya" {{ old('status') == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
                             </select>
                             @error('status')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
