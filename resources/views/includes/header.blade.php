@@ -1,5 +1,4 @@
 <style>
-    /* -- CSS HEADER UTAMA -- */
     .header-nav {
         background-color: #ffffff;
         padding: 0.75rem 2rem;
@@ -18,29 +17,21 @@
     .site-name {
         font-family: 'Poppins', sans-serif;
         font-size: 1.6rem;
-        font-weight: 800; /* Sangat Tebal */
-
-        /* Gradasi Horizontal: Biru Tua Resmi -> Biru Terang Teknologi */
+        font-weight: 800;
         background: linear-gradient(to right, #002b5c 0%, #0099ff 100%);
-
-        /* Teknik memotong background mengikuti bentuk teks */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-
-        /* Fallback warna jika gradasi tidak muncul */
         color: #002b5c;
-
         text-transform: uppercase;
-        margin-left: 10px; /* Jarak dari logo gambar */
-        letter-spacing: 0.5px; /* Sedikit jarak antar huruf agar tidak terlalu padat */
+        margin-left: 10px;
+        letter-spacing: 0.5px;
     }
     .site-name-link { text-decoration: none; }
 
     .header-menu { list-style-type: none; margin: 0; padding: 0; display: flex; }
     .header-menu li { margin-left: 20px; }
 
-    /* Link Menu Utama - Rata Tengah */
     .header-menu a {
         text-decoration: none;
         color: #555;
@@ -48,18 +39,15 @@
         padding: 8px 12px;
         border-radius: 5px;
         transition: background-color 0.3s ease, color 0.3s ease;
-
-        /* Flexbox agar teks dan ikon sejajar vertikal */
         display: flex;
         align-items: center;
         justify-content: center;
         line-height: 1.5;
-        gap: 5px; /* Jarak antara teks dan ikon > */
+        gap: 5px;
     }
 
     .header-menu a:hover, .header-menu a.active { background-color: #007bff; color: #ffffff; }
 
-    /* Admin Bar */
     .admin-bar { background-color: #1a237e; color: white; padding: 0.75rem 2rem; display: flex; justify-content: space-between; align-items: center; font-family: sans-serif; }
     .admin-bar .admin-info { font-weight: 600; }
     .admin-bar .admin-menu { display: flex; align-items: center; gap: 20px; }
@@ -79,17 +67,13 @@
     }
     .admin-bar .btn-logout:hover { background-color: white; color: #1a237e; }
 
-    /* -- CSS DROPDOWN -- */
-    .header-menu .header-dropdown {
-        position: relative;
-    }
+    .header-dropdown { position: relative; }
 
-    .header-menu .header-dropdown .dropdown-menu-nav {
+    .dropdown-menu-nav {
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);
         transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-
         position: absolute;
         top: 100%;
         left: 0;
@@ -102,29 +86,27 @@
         margin: 0;
         border-radius: 5px;
     }
-    .header-menu .header-dropdown:hover .dropdown-menu-nav {
+    .header-dropdown:hover .dropdown-menu-nav {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-    .header-menu .header-dropdown .dropdown-menu-nav li { margin: 0; width: 100%; }
+    .dropdown-menu-nav li { margin: 0; width: 100%; }
 
-    /* Link di dalam dropdown */
-    .header-menu .header-dropdown .dropdown-menu-nav a {
+    .dropdown-menu-nav a {
         padding: 10px 15px;
         display: block;
         border-radius: 0;
         color: #333;
         transition: background-color 0.3s ease, color 0.3s ease;
-        text-align: left; /* Teks rata kiri di dalam dropdown */
+        text-align: left;
     }
-    .header-menu .header-dropdown .dropdown-menu-nav a:hover,
-    .header-menu .header-dropdown .dropdown-menu-nav a.active {
+    .dropdown-menu-nav a:hover,
+    .dropdown-menu-nav a.active {
         background-color: #007bff;
         color: #ffffff;
     }
 
-    /* -- CSS IKON PANAH (>) YANG ANDA INGINKAN -- */
     .dropdown-icon-mobile {
         display: inline-block;
         font-weight: bold;
@@ -132,21 +114,18 @@
         font-size: 1.1em;
         transform: rotate(0deg);
         transition: transform 0.3s ease;
-        color: #555; /* Warna default abu-abu */
+        color: #555;
     }
 
-    /* Saat menu aktif atau di-hover, warna ikon jadi putih */
     .header-menu a.active .dropdown-icon-mobile,
     .header-menu a:hover .dropdown-icon-mobile {
         color: #ffffff;
     }
 
-    /* Rotasi ikon saat hover (Desktop) */
-    .header-menu .header-dropdown:hover > a .dropdown-icon-mobile {
-        transform: rotate(90deg); /* Berputar ke bawah */
+    .header-dropdown:hover > a .dropdown-icon-mobile {
+        transform: rotate(90deg);
     }
 
-    /* -- CSS RESPONSIF (MOBILE) -- */
     .mobile-menu-toggle {
         display: none;
         font-size: 1.5rem;
@@ -171,7 +150,6 @@
             background-color: #ffffff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             z-index: 1000;
-
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out;
@@ -182,36 +160,30 @@
         }
         .header-menu li { margin: 0; width: 100%; }
 
-        /* Di Mobile, tombol menu utama rata kiri */
         .header-menu a {
             padding: 15px 20px;
             border-radius: 0;
             border-bottom: 1px solid #f0f0f0;
             display: flex;
-            justify-content: space-between; /* Teks di kiri, ikon di kanan */
+            justify-content: space-between;
             width: 100%;
         }
 
-        /* Khusus tombol dropdown di mobile */
-        .header-menu .header-dropdown > a {
-            justify-content: space-between;
-        }
+        .header-dropdown > a { justify-content: space-between; }
 
         .mobile-menu-toggle { display: block; }
         .admin-bar { flex-direction: column; gap: 10px; padding: 0.75rem 1rem; }
         .admin-menu { flex-wrap: wrap; justify-content: center; }
 
-        /* Rotasi ikon mobile saat diklik */
-        .header-menu .header-dropdown.active > a .dropdown-icon-mobile {
+        .header-dropdown.active > a .dropdown-icon-mobile {
             transform: rotate(90deg);
         }
-        /* Hentikan rotasi hover di mobile */
-        .header-menu .header-dropdown:hover > a .dropdown-icon-mobile {
+        .header-dropdown:hover > a .dropdown-icon-mobile {
             transform: rotate(0deg);
         }
 
-        .header-menu .header-dropdown { position: static; }
-        .header-menu .header-dropdown .dropdown-menu-nav {
+        .header-dropdown { position: static; }
+        .dropdown-menu-nav {
             display: block;
             position: static;
             box-shadow: none;
@@ -219,24 +191,22 @@
             border-radius: 0;
             padding-left: 20px;
             background-color: #f9f9f9;
-
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.4s ease-out;
             padding-top: 0;
             padding-bottom: 0;
-
             opacity: 1;
             visibility: visible;
             transform: none;
         }
-        .header-menu .header-dropdown.active .dropdown-menu-nav {
+        .header-dropdown.active .dropdown-menu-nav {
             max-height: 500px;
             padding-top: 5px;
             padding-bottom: 5px;
         }
-         .header-menu .header-dropdown .dropdown-menu-nav a { padding: 12px 20px; border-bottom: 1px solid #e9e9e9; }
-         .header-menu .header-dropdown .dropdown-menu-nav li:last-child a { border-bottom: none; }
+        .dropdown-menu-nav a { padding: 12px 20px; border-bottom: 1px solid #e9e9e9; }
+        .dropdown-menu-nav li:last-child a { border-bottom: none; }
     }
     @media (max-width: 576px) {
         .logo-group { padding-right: 10px; margin-right: 10px; }
@@ -265,24 +235,21 @@
         <ul class="header-menu" id="headerMenu">
             <li><a href="{{ Auth::check() ? route('suadmin.dashboard') : route('home') }}" class="{{ Request::routeIs('home', 'suadmin.dashboard') ? 'active' : '' }}">Home</a></li>
 
-            <li><a href="{{ Auth::check() ? route('suadmin.hotspot.index') : route('hotspot.index') }}"
+            <li>
+                <a href="{{ Auth::check() ? route('suadmin.hotspot.index') : route('hotspot.index') }}"
                    class="{{ (Request::routeIs('hotspot.index') || Request::routeIs('suadmin.hotspot.*')) ? 'active' : '' }}">Hotspot</a>
             </li>
 
             <li><a href="{{ Auth::check() ? route('suadmin.regulasi.index') : route('regulasi') }}" class="{{ Request::routeIs('regulasi', 'suadmin.regulasi.*') ? 'active' : '' }}">Regulasi</a></li>
 
             <li class="header-dropdown" id="dataInfraDropdown">
-                {{-- PERBAIKAN UTAMA: KELAS 'dropdown-toggle' SUDAH DIHAPUS --}}
                 <a href="javascript:void(0);"
                    class="{{ (
                        Request::routeIs('datamenara', 'suadmin.datamenara.*') ||
                        Request::routeIs('databakti', 'suadmin.databakti.*') ||
                        Request::routeIs('blankspot.index', 'suadmin.blankspot.*')
                    ) ? 'active' : '' }}">
-
                    <span>Data Infrastruktur</span>
-
-                   {{-- IKON > YANG ANDA INGINKAN (KEMBALI LAGI) --}}
                    <span class="dropdown-icon-mobile">&gt;</span>
                 </a>
 
