@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Bakti - Admin</title>
-    {{-- Bootstrap 5 & Fonts --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +19,6 @@
 
         .container-fluid { max-width: 1200px; padding: 0 30px; }
 
-        /* Card Utama - Flat & Clean */
         .content-card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -29,7 +27,6 @@
             overflow: hidden;
         }
 
-        /* Header */
         .card-header {
             padding: 25px 30px;
             border-bottom: 1px solid #eef2f9;
@@ -40,7 +37,6 @@
 
         .card-body { padding: 30px; }
 
-        /* Form Input Styling */
         .form-label { font-weight: 600; color: #33425e; font-size: 0.9rem; margin-bottom: 8px; }
 
         .form-control, .form-select {
@@ -56,7 +52,6 @@
         }
         textarea.form-control { resize: vertical; }
 
-        /* Tombol Footer */
         .card-footer {
             background-color: #f8f9fc;
             padding: 20px 30px;
@@ -112,53 +107,38 @@
                 @method('PUT')
 
                 <div class="content-card">
-                    {{-- Header --}}
                     <div class="card-header">
                         <h1>Edit Data Bakti</h1>
                         <p>Perbarui data untuk: <strong>{{ $dataBakti->provider }}</strong></p>
                     </div>
 
                     <div class="card-body">
-                        {{-- Tidak ada Section Divider (Langsung ke Form) --}}
 
                         <div class="row g-4">
-                            {{-- Nama Provider --}}
                             <div class="col-md-6">
                                 <label for="provider" class="form-label">Nama <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="provider" name="provider" value="{{ old('provider', $dataBakti->provider) }}" required>
                             </div>
-
-                            {{-- Kecamatan --}}
                             <div class="col-md-6">
                                 <label for="kecamatan" class="form-label">Kecamatan</label>
                                 <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ old('kecamatan', $dataBakti->kecamatan) }}">
                             </div>
-
-                            {{-- Kelurahan --}}
                             <div class="col-md-6">
                                 <label for="kelurahan" class="form-label">Kelurahan/Desa</label>
                                 <input type="text" class="form-control" id="kelurahan" name="kelurahan" value="{{ old('kelurahan', $dataBakti->kelurahan) }}">
                             </div>
-
-                            {{-- Alamat --}}
                             <div class="col-12">
                                 <label for="alamat" class="form-label">Alamat Lengkap</label>
                                 <textarea class="form-control" id="alamat" name="alamat" rows="3">{{ old('alamat', $dataBakti->alamat) }}</textarea>
                             </div>
-
-                            {{-- Latitude --}}
                             <div class="col-md-6">
                                 <label for="latitude" class="form-label">Latitude</label>
                                 <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $dataBakti->latitude) }}">
                             </div>
-
-                            {{-- Longitude --}}
                             <div class="col-md-6">
                                 <label for="longitude" class="form-label">Longitude</label>
                                 <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude', $dataBakti->longitude) }}">
                             </div>
-
-                            {{-- Status --}}
                             <div class="col-md-6">
                                 <label for="status" class="form-label">Status</label>
                                 <select class="form-select" id="status" name="status">
@@ -167,16 +147,12 @@
                                     <option value="Lainnya" {{ old('status', $dataBakti->status) == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
                                 </select>
                             </div>
-
-                            {{-- Tinggi Tower --}}
                             <div class="col-md-6">
                                 <label for="tinggi_tower" class="form-label">Tinggi Tower (meter)</label>
                                 <input type="number" class="form-control" id="tinggi_tower" name="tinggi_tower" value="{{ old('tinggi_tower', $dataBakti->tinggi_tower) }}">
                             </div>
                         </div>
                     </div>
-
-                    {{-- Footer --}}
                     <div class="card-footer">
                         <a href="{{ route('suadmin.databakti.index') }}" class="btn-custom btn-cancel">Batal</a>
                         <button type="submit" class="btn-custom btn-save">

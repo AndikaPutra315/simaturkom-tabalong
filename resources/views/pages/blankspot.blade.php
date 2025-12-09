@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* CSS KUSTOM (Sama dengan Data Bakti/Menara) */
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
@@ -209,7 +208,6 @@
                                 <th>Desa</th>
                                 <th>Kecamatan</th>
                                 <th>Site ID</th>
-                                {{-- PERUBAHAN: Kolom dipisah --}}
                                 <th>Latitude</th>
                                 <th>Longitude</th>
                                 <th>Layanan Pendidikan</th>

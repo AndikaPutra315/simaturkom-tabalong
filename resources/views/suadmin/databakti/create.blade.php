@@ -10,10 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Menggunakan CSS yang sama dari halaman index Anda */
         body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #f4f7fc; }
         main { flex: 1; padding: 40px 0; }
-        .container-fluid { max-width: 1200px; padding: 0 30px; } /* Dibuat sedikit lebih ramping untuk form */
+        .container-fluid { max-width: 1200px; padding: 0 30px; }
         .content-card { background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); overflow: hidden; }
         .card-header { padding: 25px 30px; border-bottom: 1px solid #eef2f9; }
         .card-header h1 { margin: 0; font-size: 1.75rem; font-weight: 600; color: #1a237e; }
@@ -63,7 +62,6 @@
     <main>
         <div class="container-fluid">
 
-            {{-- Menampilkan Error Validasi --}}
             @if ($errors->any())
                 <div class="alert alert-danger mb-4">
                     <h5 class="alert-heading">Ada Kesalahan!</h5>
@@ -84,43 +82,36 @@
                     </div>
                     <div class="card-body">
                         <div class="row g-4">
-                            {{-- Kolom Provider (Nama) --}}
                             <div class="col-md-6">
                                 <label for="provider" class="form-label">Nama <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="provider" name="provider" value="{{ old('provider') }}" required>
                             </div>
 
-                            {{-- Kolom Kecamatan --}}
                             <div class="col-md-6">
                                 <label for="kecamatan" class="form-label">Kecamatan</label>
                                 <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ old('kecamatan') }}">
                             </div>
 
-                            {{-- Kolom Kelurahan/Desa --}}
                             <div class="col-md-6">
                                 <label for="kelurahan" class="form-label">Kelurahan/Desa</label>
                                 <input type="text" class="form-control" id="kelurahan" name="kelurahan" value="{{ old('kelurahan') }}">
                             </div>
 
-                            {{-- Kolom Alamat --}}
                             <div class="col-12">
                                 <label for="alamat" class="form-label">Alamat Lengkap</label>
                                 <textarea class="form-control" id="alamat" name="alamat" rows="3">{{ old('alamat') }}</textarea>
                             </div>
 
-                            {{-- Kolom Latitude --}}
                             <div class="col-md-6">
                                 <label for="latitude" class="form-label">Latitude</label>
                                 <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude') }}" placeholder="-2.12345678">
                             </div>
 
-                            {{-- Kolom Longitude --}}
                             <div class="col-md-6">
                                 <label for="longitude" class="form-label">Longitude</label>
                                 <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude') }}" placeholder="115.12345678">
                             </div>
 
-                            {{-- Kolom Status --}}
                             <div class="col-md-6">
                                 <label for="status" class="form-label">Status</label>
                                 <select class="form-select" id="status" name="status">
@@ -130,7 +121,6 @@
                                 </select>
                             </div>
 
-                            {{-- Kolom Tinggi Tower --}}
                             <div class="col-md-6">
                                 <label for="tinggi_tower" class="form-label">Tinggi Tower (meter)</label>
                                 <input type="number" class="form-control" id="tinggi_tower" name="tinggi_tower" value="{{ old('tinggi_tower') }}">

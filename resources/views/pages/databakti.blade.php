@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* SEMUA CSS KUSTOM DARI datamenara.blade.php DISALIN KE SINI */
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;

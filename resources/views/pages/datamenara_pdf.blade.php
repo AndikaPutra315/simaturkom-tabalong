@@ -16,7 +16,6 @@
     <table>
         <thead>
             <tr>
-                {{-- Kolom Kode DIHAPUS untuk Guest --}}
                 <th>Provider</th>
                 <th>Desa/Kelurahan</th>
                 <th>Kecamatan</th>
@@ -30,7 +29,6 @@
         <tbody>
             @forelse ($menaraData as $menara)
                 <tr>
-                    {{-- Data Kode DIHAPUS untuk Guest --}}
                     <td>{{ $menara->provider }}</td>
                     <td>{{ $menara->kelurahan }}</td>
                     <td>{{ $menara->kecamatan }}</td>
@@ -42,7 +40,6 @@
                 </tr>
             @empty
                 <tr>
-                    {{-- Colspan diubah dari 9 menjadi 8 --}}
                     <td colspan="8" style="text-align: center;">Tidak ada data.</td>
                 </tr>
             @endforelse

@@ -117,7 +117,12 @@
                         <a href="{{ route('suadmin.blankspot.create') }}" class="btn-custom btn-add">
                             <i class="fas fa-plus"></i> Tambah Data
                         </a>
-
+                        <div class="mt-2">
+                        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill" style="font-weight: 600; font-size: 0.85rem;">
+                            <i class="fas fa-layer-group me-2"></i>
+                            Total Data: {{ $blankspots->total() }}
+                        </span>
+                    </div>
                     </div>
                 </div>
                 <div class="table-responsive">

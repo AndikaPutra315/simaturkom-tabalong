@@ -55,6 +55,7 @@
         .status-badge { display: inline-block; padding: 5px 12px; border-radius: 15px; font-weight: 500; font-size: 0.8rem; text-transform: capitalize; }
         .status-aktif { background-color: #e7f5e8; color: #28a745; }
         .status-nonaktif { background-color: #f8d7da; color: #721c24; }
+        .status-lainnya { background-color: #6c757d; color: white; }
         .table-footer { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-top: 1px solid #eef2f9; }
         .entries-info { color: #66789a; font-size: 0.9rem; }
     </style>
@@ -118,6 +119,12 @@
                         <a href="{{ route('suadmin.datamenara.create') }}" class="btn-custom btn-add">
                             <i class="fas fa-plus"></i>Tambah Data
                         </a>
+                        <div class="mt-2">
+                        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill" style="font-weight: 600; font-size: 0.85rem;">
+                            <i class="fas fa-layer-group me-2"></i>
+                            Total Data: {{ $menara->total() }}
+                        </span>
+                    </div>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -150,8 +157,10 @@
                                     <td>
                                         @if (strtolower($item->status) == 'aktif')
                                             <span class="status-badge status-aktif">Aktif</span>
-                                        @else
+                                        @elseif (strtolower($item->status) == 'nonaktif')
                                             <span class="status-badge status-nonaktif">Nonaktif</span>
+                                        @else
+                                            <span class="status-badge status-lainnya">{{ $item->status }}</span>
                                         @endif
                                     </td>
                                     <td class="text-center">
@@ -200,7 +209,6 @@
                     <div class="modal-body">
                         <p>Pilih file Excel (.xlsx atau .xls) untuk diimpor. Pastikan urutan dan format kolom sudah sesuai template.</p>
 
-                        {{-- DITAMBAHKAN: Link untuk download template --}}
                         <div class="mb-3">
                             <a href="{{ asset('files/contoh template data menara.xlsx') }}" class="btn btn-outline-success btn-sm" download>
                                 <i class="fas fa-file-excel me-2"></i> Download Contoh Template
@@ -214,7 +222,6 @@
 
                         <div class="my-3">
                             <label for="file_excel" class="form-label fw-bold">Pilih File untuk Di-upload:</label>
-                            {{-- DITAMBAHKAN: Atribut 'accept' untuk memfilter file --}}
                             <input class="form-control" type="file" name="file_excel" id="file_excel"
                                    accept=".xlsx, .xls, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                                    required>
@@ -232,7 +239,6 @@
     @include('includes.footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Inisialisasi Tooltip Bootstrap
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
           return new bootstrap.Tooltip(tooltipTriggerEl)

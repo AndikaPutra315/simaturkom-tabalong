@@ -22,7 +22,6 @@
                     <h1 class="mb-0 fw-bold">Tambah Dokumen Regulasi Baru</h1>
                  </div>
                  <div class="card-body p-4">
-                    {{-- PERUBAHAN DI SINI: action form diperbaiki --}}
                     <form action="{{ route('suadmin.regulasi.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">

@@ -13,13 +13,10 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            /* Fallback color jika gambar gagal muat */
             background-color: #333;
 
-            /* Background Image dengan Overlay Gelap Transparan (0.4) agar tulisan terbaca */
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{{ asset('images/monumen.jpeg') }}");
 
-            /* Pengaturan agar gambar full screen dan responsif */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -39,15 +36,13 @@
             display: block;
             margin: 0 auto 30px auto;
             height: 60px;
-            /* Opsional: Beri drop shadow pada logo agar kontras dengan background foto */
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
         .login-card {
             border: none;
             border-radius: 1rem;
-            /* Membuat kartu putih transparan agar background monumen terlihat samar */
             background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px); /* Efek blur di belakang kartu */
+            backdrop-filter: blur(10px);
             box-shadow: 0 1rem 3rem rgba(0,0,0,0.2)!important;
         }
         .login-card .card-title {
@@ -67,7 +62,6 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        /* Style tambahan untuk input agar lebih jelas di atas backdrop */
         .form-floating > .form-control {
             background-color: rgba(255, 255, 255, 0.9);
         }

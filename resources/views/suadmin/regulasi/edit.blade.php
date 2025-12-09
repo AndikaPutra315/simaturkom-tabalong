@@ -19,11 +19,9 @@
         <div class="container">
             <div class="content-card">
                  <div class="card-header p-4 border-bottom">
-                    {{-- Judul dinamis dengan nama dokumen --}}
                     <h1 class="mb-0 fw-bold">Edit Dokumen: {{ $regulasi->nama_dokumen }}</h1>
                  </div>
                  <div class="card-body p-4">
-                    {{-- Form akan mengirim data ke route update --}}
                     <form action="{{ route('suadmin.regulasi.update', $regulasi->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')

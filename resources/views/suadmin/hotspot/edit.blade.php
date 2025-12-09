@@ -33,7 +33,6 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="keterangan" class="form-label">Keterangan</label>
-                                {{-- PERUBAHAN: Input menjadi Select Dropdown --}}
                                 <select class="form-select" id="keterangan" name="keterangan" required>
                                     <option value="">Pilih Keterangan...</option>
                                     <option value="SKPD" @selected(old('keterangan', $hotspot->keterangan) == 'SKPD')>SKPD</option>
